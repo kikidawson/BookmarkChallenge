@@ -1,10 +1,16 @@
 # frozen_string_literal: true
-
+require 'pg'
 class Bookmark
   def self.all
-    ['google.com',
-     'yahoo.com',
-     'amazon.com',
-     'github.com']
+      con = PG.connect :dbname => 'bookmark_manager', :user=> 'aracho'
+
+      rs = con.exec "SELECT * FROM bookmarks"
+      rs.map{ |bookmark| bookmark['url']}
   end
+
+  def self.add
+    con = PG.connect :dbname => 'bookmark_manager', :user=> 'aracho'
+
+    rs = con.exec "INSERT INTO bookmarks(url) VALUES('amazon.co.uk')"
+end
 end
