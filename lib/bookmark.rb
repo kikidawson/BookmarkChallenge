@@ -9,9 +9,9 @@ class Bookmark
   end
 
   def self.add(bookmark)
-    connection = PG.connect :dbname => 'bookmark_manager', :user=> 'aj'
+    connection = PG.connect :dbname => 'bookmark_manager'
 
     result = connection.exec "INSERT INTO bookmarks(url) VALUES('#{bookmark}')"
   end
-  
+
 end
