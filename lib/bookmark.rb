@@ -2,15 +2,16 @@
 require 'pg'
 class Bookmark
   def self.all
-      con = PG.connect :dbname => 'bookmark_manager', :user=> 'aracho'
+      connection = PG.connect :dbname => 'bookmark_manager'
 
-      rs = con.exec "SELECT * FROM bookmarks"
-      rs.map{ |bookmark| bookmark['url']}
+      result = connection.exec "SELECT * FROM bookmarks;"
+      result.map{ |bookmark| bookmark['url']}
   end
 
-  def self.add
-    con = PG.connect :dbname => 'bookmark_manager', :user=> 'aracho'
+  def self.add(bookmark)
+    connection = PG.connect :dbname => 'bookmark_manager', :user=> 'aj'
 
-    rs = con.exec "INSERT INTO bookmarks(url) VALUES('amazon.co.uk')"
-end
+    result = connection.exec "INSERT INTO bookmarks(url) VALUES('#{bookmark}')"
+  end
+  
 end
