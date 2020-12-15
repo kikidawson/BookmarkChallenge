@@ -1,3 +1,4 @@
+
 feature "Testing set-up" do
   scenario "homepage has hello world" do
     visit '/'
