@@ -1,10 +1,12 @@
 # BookmarkChallenge
 
 As a user
-
 In order to use the bookmarks
-
 I’d like to see a list of bookmarks
+
+As a user
+In order to store a bookmark 
+I'd like to add a bookmark
 
 Nouns
 
