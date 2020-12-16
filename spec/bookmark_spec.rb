@@ -6,12 +6,14 @@ describe Bookmark do
     end
 
     it 'returns a list of bookmarks' do
-        expect(Bookmark.all).to include 'http://www.makersacademy.com'
+        expect(Bookmark.all).to include ['Makers', "http://www.makersacademy.com"]
+        expect(Bookmark.all).to include ['Destroy All Software', "http://www.destroyallsoftware.com"]
+        expect(Bookmark.all).to include ['Google', "http://www.google.com"]
     end
 
     it 'adds a bookmark' do
-        Bookmark.add('unit.com')
-        expect(Bookmark.all).to include 'unit.com'
+        Bookmark.add('Unit', 'unit.com')
+        expect(Bookmark.all).to include ['Unit', 'unit.com']
     end
 
 end

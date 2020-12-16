@@ -1,8 +1,8 @@
 <h1>Here is a list of Bookmarks:</h1>
 
 <ul>
-  <% @bookmark.each do |bookmark| %>
-    <li><%= bookmark %></li>
+  <% @bookmarks.each do |bookmark| %>
+    <li><a href=<%= bookmark[1] %>><%= bookmark[0] %></li>
   <% end %>
 </ul>
 
