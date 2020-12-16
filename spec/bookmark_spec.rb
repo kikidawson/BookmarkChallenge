@@ -16,4 +16,8 @@ describe Bookmark do
         expect(Bookmark.all).to include ['Unit', 'unit.com']
     end
 
+    it 'deletes a bookmark' do
+        Bookmark.delete('Makers')
+        expect(Bookmark.all).not_to include ['Makers', "http://www.makersacademy.com"]
+    end
 end
